@@ -1,0 +1,31 @@
+{% extends 'diary/base.html' %}
+
+{% block header %}
+<h1>Diary List</h1>
+<p><a class="btn btn-outline-secondary" href="{% url 'index' %}" role="button">戻る</a></p>
+<p><a class="btn btn-primary" href="{% url 'diary_create' %}">新規作成</a></p>
+{% endblock header %}
+
+{% block content %}
+<div class="shadow-sm p-3 mb-5 bg-white rounded">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">date</th>
+                <th scope="col">title</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for diary in diarys %}
+            <tr>
+                <td>{{diary.day}}</td>
+                <td>{{diary.title}}</td>
+                <td><a href="{% url 'diary_detail' diary.pk %}">詳細</a></td>
+                <td><a href="{% url 'diary_update' diary.pk %}">編集</a></td>
+                <td><a href="{% url 'diary_delete' diary.pk %}">削除</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

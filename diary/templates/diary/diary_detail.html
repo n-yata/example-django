@@ -1,0 +1,16 @@
+{% extends 'diary/base.html' %}
+
+{% block header %}
+<h1>Diary Detail</h1>
+<p><a class="btn btn-outline-secondary" href="{% url 'diary_list' %}" role="button">戻る</a></p>
+{% endblock header %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h2>{{diary.title}}</h2>
+        <p>{{diary.contents}}</p>
+        <p><small class="text-muted">{{diary.day}}</small></p>
+    </div>
+</div>
+{% endblock content %}

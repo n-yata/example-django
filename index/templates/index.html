@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>hello world!</h1>
+{% endblock header %}
+
+{% block content %}
+<div class="shadow-sm p-3 mb-5 bg-white rounded">
+    <p>
+        <a class="btn btn-success" href="{% url 'todo_list' %}">Todo</a>
+        <a class="btn btn-success" href="{% url 'diary_list' %}">Diary</a>
+    </p>
+</div>
+{% endblock content %}
